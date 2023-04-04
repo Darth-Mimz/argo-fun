@@ -10,6 +10,9 @@ metadata:
     nginx.ingress.kubernetes.io/proxy-body-size: "0"
     nginx.ingress.kubernetes.io/proxy-read-timeout: "600"
     nginx.ingress.kubernetes.io/proxy-send-timeout: "600"
+    # pieces for LetsEncrypt integration
+    nginx.ingress.kubernetes.io/affinity: cookie
+    certmanager.k8s.io/cluster-issuer: "letsencrypt-prod"
 spec:
   rules:
   - host: splunk.defnotavirus.com
@@ -22,4 +25,8 @@ spec:
             name: splunk-s1-standalone-service
             port:
               number: 8000
-
+  # more bits for letsencrypt            
+  tls:
+  - hosts:
+    - splunk.defnotavirus.com
+    secretName: splunk.defnotavirus.com-tls
