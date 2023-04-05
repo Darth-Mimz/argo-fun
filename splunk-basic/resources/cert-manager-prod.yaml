@@ -2,6 +2,7 @@ apiVersion: cert-manager.io/v1
    kind: Issuer
    metadata:
      name: letsencrypt-prod
+     namespace: splunk-operator
    spec:
      acme:
        # The ACME server URL
