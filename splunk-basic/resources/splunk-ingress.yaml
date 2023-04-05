@@ -6,7 +6,7 @@ metadata:
   annotations:
     # use the shared ingress-nginx
     kubernetes.io/ingress.class: "nginx"
-    nginx.ingress.kubernetes.io/default-backend: splunk-standalone-standalone-service
+    nginx.ingress.kubernetes.io/default-backend: splunk-single-standalone-service
     nginx.ingress.kubernetes.io/proxy-body-size: "0"
     nginx.ingress.kubernetes.io/proxy-read-timeout: "600"
     nginx.ingress.kubernetes.io/proxy-send-timeout: "600"
@@ -22,7 +22,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: splunk-s1-standalone-service
+            name: splunk-single-standalone-service
             port:
               number: 8000
   # more bits for letsencrypt            
