@@ -10,3 +10,19 @@ spec:
     name: cm
   monitoringConsoleRef:
     name: splunk-dev
+  replicas: 1
+  appRepo:
+    appsRepoPollIntervalSeconds: 600
+    defaults:
+      volumeName: volume_app_repo
+      scope: local
+    appSources:
+    - name: vulnApps
+      location: vuln-mgmt/
+    volumes:
+    - name: volume_app_repo
+      storageType: s3
+      provider: aws
+      path: purplesec-splunk-apps
+      endpoint: https://s3-us-east-2.amazonaws.com
+      region: us-east-2
