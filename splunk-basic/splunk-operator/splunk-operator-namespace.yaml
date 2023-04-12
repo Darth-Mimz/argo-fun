@@ -49989,7 +49989,7 @@ spec:
         fsGroup: 1001
         runAsNonRoot: true
         runAsUser: 1001
-      serviceAccountName: splunk-operator-controller-manager, s3-splunk-appframework-reader-sa
+      serviceAccountName: splunk-operator-controller-manager
       terminationGracePeriodSeconds: 10
       volumes:
       - configMap:
