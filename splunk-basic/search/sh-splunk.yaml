@@ -14,13 +14,13 @@ spec:
   appRepo:
     appsRepoPollIntervalSeconds: 600
     defaults:
-      volumeName: volume_app_repo
+      volumeName: app-staging
       scope: local
     appSources:
     - name: vulnApps
       location: vuln-mgmt/
     volumes:
-    - name: volume_app_repo
+    - name: app-staging
       storageType: s3
       provider: aws
       path: purplesec-splunk-apps
