@@ -49385,8 +49385,8 @@ kind: ServiceAccount
 metadata:
   labels: 
     name: splunk-operator
-    annotations: 
-      eks.amazonaws.com/role-arn: arn:aws:iam::413112485471:role/eksctl-splunk-dev-5-addon-iamserviceaccount-Role1-GD0M20QYH4UB
+  annotations: 
+    eks.amazonaws.com/role-arn: arn:aws:iam::413112485471:role/eksctl-splunk-dev-5-addon-iamserviceaccount-Role1-GD0M20QYH4UB
   name: splunk-operator-controller-manager
   namespace: splunk-operator
 ---
