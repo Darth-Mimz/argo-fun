@@ -138,11 +138,13 @@ aws iam create-policy \
 
 A `--role-name` flag can be added to specify the name of the custom role that is created, otherwise ekstcl will set this. 
 
-4. Link the ServiceAccount to the splunk-operator pod
-
-On line 49992 of the splunk-operator-namespace.yaml CR.. add the name of the newly created service account 
-
 ```
-      serviceAccountName: splunk-operator-controller-manager, s3-splunk-appframework-reader-sa
+eksctl create iamserviceaccount \
+  --name my-service-account \
+  --namespace <my-namespace> \
+  --cluster <my-cluster> 
+  --role-name "my-role" \
+  --attach-policy-arn arn:aws:iam::111122223333:policy/my-policy --approve
 ```
 
+.... cannot assign multipe SA's to same Pod :(, need to rethink approach. 
