@@ -23,6 +23,6 @@ spec:
     - name: app-staging
       storageType: s3
       provider: aws
-      path: purplesec-splunk-apps
+      path: purplesec-splunk-apps/
       endpoint: https://s3-us-east-1.amazonaws.com
       region: us-east-1
