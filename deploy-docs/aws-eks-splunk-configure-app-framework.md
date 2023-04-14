@@ -147,4 +147,11 @@ eksctl create iamserviceaccount \
   --attach-policy-arn arn:aws:iam::111122223333:policy/my-policy --approve
 ```
 
-.... cannot assign multipe SA's to same Pod :(, need to rethink approach. 
+
+4. ..? 
+
+Tried associating the role ARN with the splunk-operator pod by adding it in the annotation .. but could not seem to get this working properly. I was able to get this working by creating an IAM user, attaching the same policy, creating access keys, and manually configuring a secret with them via kubectl. Once I did this, I noticed some errors in the splunk-operator pod about a password failing when it tried to validate if apps were installed or not; this is likely because I modified the kubernetes-generated secret to something easier to type via the Splunk GUI. I tried modifying the secret via `kubectl edit secret..` to what I had changed it to, but the secret stored on the standalone SH in `/mnt/spunk-secrets/password` wasn't getting updated to match. After I changed the secret back to the original value, the AppFramework properly deployed packages. 
+
+To Do: 
+- Figure out how IAM roles are applied to pods within the EKS cluster
+- Auth to s3 bucket via IAM role vs. hardcoded creds. 
