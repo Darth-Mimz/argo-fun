@@ -17,6 +17,6 @@ spec:
         volumeName: app-staging
     volumes:
       - name: app-staging
-        path: indexes/
+        path: purplesec-splunk-apps/indexes/
         endpoint: https://s3-us-east-1.amazonaws.com
         secretRef: s3-app-secret
