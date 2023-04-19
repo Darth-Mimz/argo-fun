@@ -20,4 +20,3 @@ spec:
         path: purplesec-splunk-apps/indexes/
         endpoint: https://s3-us-east-1.amazonaws.com
         secretRef: s3-app-secret
-s
