@@ -4,17 +4,17 @@ metadata:
   name: cm
   namespace: splunk-operator
   finalizers:
-  - enterprise.splunk.com/delete-pvc
+    - enterprise.splunk.com/delete-pvc
 spec:
   monitoringConsoleRef:
     name: splunk-dev
   smartstore:
     defaults:
-        volumeName: app-staging
-    indexes:
-    - name: windows
-      remotePath: windows_index
       volumeName: app-staging
+    indexes:
+      - name: windows
+        remotePath: windows_index
+        volumeName: app-staging
     volumes:
       - name: app-staging
         path: indexes/
