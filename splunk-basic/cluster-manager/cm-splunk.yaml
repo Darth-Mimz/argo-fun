@@ -20,6 +20,6 @@ spec:
         provider: aws
         storageType: s3
         region: us-east-1
-        path: purplesec-splunk-indexes/
+        path: purplesec-splunk-indexes
         endpoint: https://s3-us-east-1.amazonaws.com
         secretRef: s3-app-secret
