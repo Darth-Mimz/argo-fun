@@ -13,10 +13,11 @@ spec:
       volumeName: app-staging
     indexes:
       - name: windows
-        remotePath: windows_index
+        remotePath: windows_index/
         volumeName: app-staging
     volumes:
       - name: app-staging
         path: purplesec-splunk-apps/indexes/
         endpoint: https://s3-us-east-1.amazonaws.com
         secretRef: s3-app-secret
+s
