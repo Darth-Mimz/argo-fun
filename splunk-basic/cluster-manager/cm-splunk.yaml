@@ -10,13 +10,13 @@ spec:
     name: splunk-dev
   smartstore:
     defaults:
-      volumeName: app-staging
+      volumeName: my-index-volume
     indexes:
       - name: windows
         remotePath: windows
-        volumeName: app-staging
+        volumeName: my-index-volume
     volumes:
-      - name: app-staging
-        path: purplesec-splunk-apps/indexes/
+      - name: my-index-volume
+        path: purplesec-splunk-indexes/
         endpoint: https://s3-us-east-1.amazonaws.com
         secretRef: s3-app-secret
