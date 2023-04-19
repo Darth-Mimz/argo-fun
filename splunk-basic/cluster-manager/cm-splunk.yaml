@@ -13,7 +13,7 @@ spec:
       volumeName: app-staging
     indexes:
       - name: windows
-        remotePath: windows_index/
+        remotePath: windows
         volumeName: app-staging
     volumes:
       - name: app-staging
