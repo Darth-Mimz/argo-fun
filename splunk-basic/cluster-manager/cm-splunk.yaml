@@ -13,7 +13,7 @@ spec:
       volumeName: my-index-volume
     indexes:
       - name: windows
-        remotePath: windows
+        remotePath: windows/
         volumeName: my-index-volume
     volumes:
       - name: my-index-volume
