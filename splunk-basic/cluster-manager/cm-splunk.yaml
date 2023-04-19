@@ -8,18 +8,3 @@ metadata:
 spec:
   monitoringConsoleRef:
     name: splunk-dev
-  smartstore:
-    defaults:
-      volumeName: purplesec-splunk-indexes
-    indexes:
-      - name: windows
-        remotePath: $_index_name
-        volumeName: purplesec-splunk-indexes
-    volumes:
-      - name: purplesec-splunk-indexes
-        provider: aws
-        storageType: s3
-        region: us-east-1
-        path: purplesec-splunk-indexes/
-        endpoint: https://s3-us-east-1.amazonaws.com
-        secretRef: s3-app-secret
